@@ -9,7 +9,7 @@ export default function Home() {
   return (
     <>
       <div className="min-h-screen bg-gray-50" >
-        <div className="max-w-6xl min-h-screen flex flex-col items-center justify-center gap-6">
+        <div className="w-full min-h-screen flex flex-col items-center justify-center gap-6">
           <div className="text-center">
             <h1 className="text-3xl font-bold text-gray-900 sm:text-4xl" >Personal Finance Tracker</h1>
             <p className="mt-2 text-gray-600" >Track your income and expenses with ease</p>
