@@ -35,3 +35,11 @@ A simple web application to track personal expenses. Built for Yardstick's Full-
 3. Add MongoDB URI in `.env.local`  
 4. Run `npm run dev`  
 
+
+This repository contains all three stages of the Yardstick Full-Stack Internship assignment.
+
+✅ The submission for Stage 1 is tagged as stage-1.
+View it using:
+
+GitHub Repo (Stage 1): https://github.com/Nikhil-0010/personal-finance-tracker/tree/stage-1
+
