@@ -63,26 +63,28 @@ useEffect(() => {
 
   return (
     <Card>
-      <CardHeader className="relative">
-        <CardTitle className="text-xl">Monthly Transactions</CardTitle>
-        <CardDescription>
-          Your spending patterns over the months
-        </CardDescription>
-        <div className="absolute right-8">
+      <CardHeader className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+        <div>
+          <CardTitle className="text-xl mb-1">Monthly Transactions</CardTitle>
+          <CardDescription>
+            Your spending patterns over the months
+          </CardDescription>
+        </div>
+        <div className="">
           <Select value={range} onValueChange={setRange}>
-            <SelectTrigger className="hover:ring-2 hover:ring-gray-200 ">
+            <SelectTrigger className="hover:ring-2 hover:ring-gray-200 w-full md:w-48">
               <SelectValue placeholder="Select time range" />
             </SelectTrigger>
             <SelectContent>
-                {rangeOptions.map((option) => {
-                  const value = Object.keys(option)[0];
-                  const label = option[value];
-                  return (
-                    <SelectItem key={value} value={value}>
-                      {label}
-                    </SelectItem>
-                  );
-                })}
+              {rangeOptions.map((option) => {
+                const value = Object.keys(option)[0];
+                const label = option[value];
+                return (
+                  <SelectItem key={value} value={value}>
+                    {label}
+                  </SelectItem>
+                );
+              })}
             </SelectContent>
           </Select>
         </div>
@@ -94,7 +96,7 @@ useEffect(() => {
           <ResponsiveContainer width="100%" height={500}>
             <BarChart
               data={data}
-              margin={{ top: 20, right: 30, left: 20, bottom: 10 }}
+              margin={{ top: 20, bottom: 10 }}
             >
               <CartesianGrid strokeDasharray="3 3" />
               <XAxis dataKey="month" />

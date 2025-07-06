@@ -21,12 +21,12 @@ export async function POST(req) {
     try {
         await connectDB();
         const body = await req.json();
-        const { amount, date, description } = body;
-        if (!amount || !date || !description) {
+        const { amount, date, description, category } = body;
+        if (!amount || !date || !description || !category) {
             return NextResponse.json({ error: "All fields are required", success: false }, { status: 400 });
         }
 
-        const newTransactions = await Transaction.create({ amount, date, description });
+        const newTransactions = await Transaction.create({ amount, date, description, category });
         return NextResponse.json({ data: newTransactions, success: true }, { status: 201 });
     } catch (error) {
         console.error("Error creating transaction:", error);

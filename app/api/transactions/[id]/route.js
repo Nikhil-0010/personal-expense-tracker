@@ -8,15 +8,15 @@ export async function PUT(req, { params }) {
         await connectDB();
         const { id } = params;
         const body = await req.json();
-        const { amount, date, description } = body;
+        const { amount, date, description, category } = body;
 
-        if (!amount || !date || !description) {
+        if (!amount || !date || !description || !category) {
             return NextResponse.json({ error: "All fields are required", success: false }, { status: 400 });
         }
 
         const updatedTransaction = await Transaction.findByIdAndUpdate(
             {_id: id},
-            { amount, date, description },
+            { amount, date, description, category },
             { new: true }
         );
 

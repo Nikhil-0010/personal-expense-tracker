@@ -5,6 +5,9 @@ import TransactionForm from "@/components/transactions/TransactionForm"
 import TransactionList from "@/components/transactions/TransactionList"
 import { toast } from 'sonner';
 import Loader from '@/components/transactions/Loader';
+import { CATEGORIES, CATEGORY_MAP } from '@/constants/categories';
+import { Button } from '@/components/ui/button';
+import { ArrowLeft } from 'lucide-react';
 
 export default function TransactionsPage() {
     const [transactions, setTransactions] = useState([]);
@@ -47,14 +50,14 @@ export default function TransactionsPage() {
         }
     };
 
-    const monthGraphData = (transactions) =>{
+    const monthGraphData = (transactions) => {
         // Calculate total amount per month
         const monthlyTotals = {};
         transactions.forEach(tx => {
             const month = tx.month;
             const amount = Number.parseInt(tx.amount) || 0;
             if (!monthlyTotals[month]) {
-            monthlyTotals[month] = 0;
+                monthlyTotals[month] = 0;
             }
             monthlyTotals[month] += amount;
         });
@@ -64,7 +67,7 @@ export default function TransactionsPage() {
             amount
         }));
     }
-    
+
 
     useEffect(() => {
         fetchTransactions();
@@ -78,14 +81,17 @@ export default function TransactionsPage() {
                     {/* title */}
                     <div className="text-center">
                         <h1 className="text-3xl font-bold text-gray-900 sm:text-4xl" >Personal Finance Tracker</h1>
-                        <p className="mt-2 text-gray-600" >Track your income and expenses with ease</p>
+                        <p className="my-2 text-gray-600" >Track your income and expenses with ease</p>
+                    <Button variant="outline" className="cursor-pointer" onClick={() => window.location.href = '/dashboard'} >
+                            <ArrowLeft className='ml-1' /> Back 
+                            </Button>
                     </div>
 
                     {/* Transaction Form */}
-                    <TransactionForm initialData={selected} onSubmit={fetchTransactions} onCancel={() => setSelected(null)} />
+                    <TransactionForm categories={CATEGORIES} initialData={selected} onSubmit={fetchTransactions} onCancel={() => setSelected(null)} />
 
                     {/* Transaction List */}
-                    <TransactionList transactions={transactions} onEdit={(tx) => setSelected(tx)} onDelete={handleDelete} />
+                    <TransactionList categories={CATEGORY_MAP} transactions={transactions} onEdit={(tx) => setSelected(tx)} onDelete={handleDelete} />
 
                     {/* Monthly Expenses */}
                     <MonthlyChart transactions={monthGraphData(transactions)} />
