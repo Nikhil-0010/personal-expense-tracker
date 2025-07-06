@@ -26,7 +26,7 @@ export default function TransactionList({
         <CardDescription> {loc==='dashboard' ? "Your latest 5 financial activities": "Your latest financial activities"}</CardDescription>
       </CardHeader>
       <CardContent>
-        <div className="space-y-4">
+        <div className="space-y-4 overflow-y-auto max-h-[32rem]">
           {transactions.length === 0 ? (
             <p className="text-center text-gray-500 py-8">
               No transactions yet. Add your first transaction above!
