@@ -44,8 +44,6 @@ A simple web application to track personal expenses. Built for Yardstick's Full-
     /transactions      # API routes for transaction CRUD
     /budgets           # API routes for budget CRUD
   /home                # Homepage for all sections
-  /dashboard           # Dashboard view (summary + charts)
-  /budgets             # Budget management page
 /components
   /transactions        # Transaction form, list, bar chart
   /budget              # Budget form, list, chart, insights

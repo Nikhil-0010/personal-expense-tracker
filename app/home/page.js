@@ -3,9 +3,9 @@
 import { useState } from "react"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { BarChart3, LayoutDashboard, PlusCircle, Target } from "lucide-react"
-import TransactionsPage from "../transactions/page" 
-import Dashboard from "../dashboard/page" 
-import BudgetPage from "../budget/page" 
+import TransactionsPage from "@/components/transactions/TransactionPage" 
+import Dashboard from "@/components/dashboard/Dashboard" 
+import BudgetPage from "@/components/budget/BudgetPage"
 import Link from "next/link"
 
 export default function HomePage() {
