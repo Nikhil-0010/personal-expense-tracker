@@ -25,7 +25,7 @@ import {
   SelectContent,
   SelectItem,
 } from "../ui/select";
-import CustomTooltip from "./CustomeTooltip";
+import CustomTooltip from "./CustomTooltip";
 
 
 //  group transactions by month
@@ -93,14 +93,18 @@ useEffect(() => {
         {data.length === 0 ? (
           <p className="text-gray-500 text-center py-8">No data to display.</p>
         ) : (
+          <div className="w-full overflow-x-auto">
+          <div className="min-w-[360px] flex items-center justify-center">
           <ResponsiveContainer width="100%" height={500}>
             <BarChart
               data={data}
               margin={{ top: 20, bottom: 10 }}
             >
               <CartesianGrid strokeDasharray="3 3" />
-              <XAxis dataKey="month" />
-              <YAxis />
+              <XAxis className="text-xs sm:text-sm" dataKey="month" interval={0}
+                angle={-30}
+                dy={10} />
+              <YAxis className="text-xs sm:text-sm" />
               <Tooltip
                 content={<CustomTooltip />}
                 cursor={{
@@ -125,6 +129,8 @@ useEffect(() => {
               />
             </BarChart>
           </ResponsiveContainer>
+          </div>
+          </div>
         )}
       </CardContent>
     </Card>

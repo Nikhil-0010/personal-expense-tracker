@@ -10,20 +10,25 @@ import {
 } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Edit3, IndianRupee, Trash2 } from "lucide-react";
-import DeleteConfirmDialog from "@/components/transactions/DeleteConfirmDialog";
+import DeleteConfirmDialog from "@/components/DeleteConfirmDialog";
 
 export default function TransactionList({
   categories,
   transactions = [],
   onEdit,
   onDelete,
-  loc=''
+  loc = "",
 }) {
   return (
     <Card>
       <CardHeader>
         <CardTitle className="text-xl ">Recent Transactions</CardTitle>
-        <CardDescription> {loc==='dashboard' ? "Your latest 5 financial activities": "Your latest financial activities"}</CardDescription>
+        <CardDescription>
+          {" "}
+          {loc === "dashboard"
+            ? "Your latest 5 financial activities"
+            : "Your latest financial activities"}
+        </CardDescription>
       </CardHeader>
       <CardContent>
         <div className="space-y-4 overflow-y-auto max-h-[32rem]">
@@ -35,9 +40,9 @@ export default function TransactionList({
             transactions.map((transaction) => (
               <div
                 key={transaction._id}
-                className="flex items-center justify-between p-4 border rounded-lg hover:bg-gray-50 transition-colors"
+                className="flex flex-wrap items-center justify-between p-4 border rounded-lg hover:bg-gray-50 transition-colors"
               >
-                <div className="flex-1 min-w-0">
+                <div className="min-w-0">
                   <div className="flex items-center gap-3">
                     <div
                       className={`flex-shrink-0 w-10 h-10 rounded-full flex items-center justify-center bg-red-100 text-red-600`}
@@ -58,7 +63,8 @@ export default function TransactionList({
                             color: categories[transaction.category]?.color,
                           }}
                         >
-                          {categories[transaction.category]?.label || transaction.category}
+                          {categories[transaction.category]?.label ||
+                            transaction.category}
                         </Badge>
                       </div>
                       <p className="text-sm text-gray-500">
@@ -67,16 +73,19 @@ export default function TransactionList({
                     </div>
                   </div>
                 </div>
-                <div className="flex items-center gap-3">
+                <div className="flex items-center gap-3 ml-auto">
                   <span className={`font-semibold text-red-600`}>
                     {"-"} {transaction.formattedAmount}
                   </span>
-                  <div className={`flex gap-1 ${loc === 'dashboard' ? 'hidden' : ''}`}>
+                  <div
+                    className={`flex gap-1 ${
+                      loc === "dashboard" ? "hidden" : ""
+                    }`}
+                  >
                     <Button
                       variant="ghost"
                       size="sm"
                       className="h-8 w-8 p-0 cursor-pointer"
-                      
                       onClick={() => onEdit(transaction)}
                     >
                       <Edit3 className="h-4 w-4" />

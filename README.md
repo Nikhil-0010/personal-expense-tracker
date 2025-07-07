@@ -9,6 +9,25 @@ A simple web application to track personal expenses. Built for Yardstick's Full-
 - Responsive UI using shadcn/ui
 - Clean and minimal UX with basic error handling
 
+## 📊 Features (Stage 2)
+- All Stage 1 features +
+- Predefined categories for transactions
+- Category-wise pie chart for expense breakdown
+- Dashboard with summary cards:
+- Total expenses this month
+- Most spent category
+- Total transactions
+
+## 🎯 Features (Stage 3)
+- All Stage 2 features +
+- Set monthly budgets per category
+- Budget vs Actual comparison chart
+- Insights:
+    - Overspending warnings
+    - Under budget highlights
+    - Categories with no budgets
+    - Summary insights
+
 ## 🧑‍💻 Tech Stack
 - Next.js 14 (App Router)
 - React
@@ -21,18 +40,36 @@ A simple web application to track personal expenses. Built for Yardstick's Full-
 
 ```
 /app
-    /api/transactions      # API routes for CRUD operations
-    /transactions         # Transactions page UI
-/components/transactions # Transaction form, list, and chart components
-/lib                    # Utility files (db.js, formatters.js, etc.)
-/models                 # Mongoose schemas
+  /api
+    /transactions      # API routes for transaction CRUD
+    /budgets           # API routes for budget CRUD
+  /home                # Homepage for all sections
+  /dashboard           # Dashboard view (summary + charts)
+  /budgets             # Budget management page
+/components
+  /transactions        # Transaction form, list, bar chart
+  /budget              # Budget form, list, chart, insights
+  /shared              # Loader, delete dialog, month/year picker
+/constants             # Categories and reusable config
+/lib                   # Database setup, utilities, formatters
+/models                # Mongoose schemas (Transaction, Budget)
+
 ```
 
 
 ## 🛠 Setup ()
 1. Clone the repo  
-2. Run `npm install`  
-3. Add MongoDB URI in `.env.local`  
+    ```bash
+    git clone https://github.com/Nikhil-0010/personal-finance-tracker.git
+    cd personal-finance-tracker
+    ```
+2. Install dependencies
+    ```bash
+    npm install
+    ```
+3. Configure environment variables
+    Create a .env.local file and add your MongoDB URI:
+
 4. Run `npm run dev`  
 
 
@@ -41,8 +78,13 @@ This repository contains all three stages of the Yardstick Full-Stack Internship
 
 Live Demo: [https://personal-finance-tracker-mocha-eta.vercel.app/]
 
-✅ The submission for Stage 1 is tagged as stage-1.
-View it using:
+✅ The submission for Stage 1, 2, 3 is tagged as stage-1.Each stage of the assignment is tagged for clarity:
+-  stage-1
+-  stage-2
+-  stage-3
+
+Use these tags to view code state per stage.View it using:
 
 GitHub Repo (Stage 1): https://github.com/Nikhil-0010/personal-finance-tracker/tree/stage-1
-
+GitHub Repo (Stage 2): https://github.com/Nikhil-0010/personal-finance-tracker/tree/stage-2
+GitHub Repo (Stage 3): https://github.com/Nikhil-0010/personal-finance-tracker/tree/stage-3

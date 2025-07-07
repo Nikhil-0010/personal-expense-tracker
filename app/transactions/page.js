@@ -4,7 +4,7 @@ import MonthlyChart from "@/components/transactions/MonthlyChart"
 import TransactionForm from "@/components/transactions/TransactionForm"
 import TransactionList from "@/components/transactions/TransactionList"
 import { toast } from 'sonner';
-import Loader from '@/components/transactions/Loader';
+import Loader from '@/components/Loader';
 import { CATEGORIES, CATEGORY_MAP } from '@/constants/categories';
 import { Button } from '@/components/ui/button';
 import { ArrowLeft } from 'lucide-react';
@@ -76,15 +76,11 @@ export default function TransactionsPage() {
     return (
         <>
             <Loader loading={loading} />
-            <div className="min-h-screen bg-gray-50 py-8 px-4 sm:px-6 lg:px-8" >
                 <div className="max-w-6xl mx-auto space-y-8">
                     {/* title */}
                     <div className="text-center">
-                        <h1 className="text-3xl font-bold text-gray-900 sm:text-4xl" >Personal Finance Tracker</h1>
+                        <h1 className="text-3xl font-bold text-gray-900 sm:text-4xl" >Transaction Tracker</h1>
                         <p className="my-2 text-gray-600" >Track your income and expenses with ease</p>
-                    <Button variant="outline" className="cursor-pointer" onClick={() => window.location.href = '/dashboard'} >
-                            <ArrowLeft className='ml-1' /> Back 
-                            </Button>
                     </div>
 
                     {/* Transaction Form */}
@@ -96,7 +92,6 @@ export default function TransactionsPage() {
                     {/* Monthly Expenses */}
                     <MonthlyChart transactions={monthGraphData(transactions)} />
                 </div>
-            </div>
         </>
     )
 }

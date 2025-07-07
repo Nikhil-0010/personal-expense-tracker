@@ -43,6 +43,13 @@ export default function TransactionFrom({
         description: initialData.description,
         category: initialData.category || "",
       });
+    } else {
+      setForm({
+        amount: "",
+        date: "",
+        description: "",
+        category: "",
+      });
     }
   }, [initialData]);
 
@@ -202,7 +209,7 @@ export default function TransactionFrom({
                   ? loading
                     ? "Updating..."
                     : "Update Transaction"
-                  : initialData
+                  : loading
                   ? "Adding"
                   : "Add Transaction"}
               </Button>

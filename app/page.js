@@ -1,6 +1,6 @@
 "use client";
 import { Button } from "@/components/ui/button";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, HomeIcon } from "lucide-react";
 import { useRouter } from "next/navigation";
 
 
@@ -14,10 +14,7 @@ export default function Home() {
             <h1 className="text-3xl font-bold text-gray-900 sm:text-4xl" >Personal Finance Tracker</h1>
             <p className="mt-2 text-gray-600" >Track your income and expenses with ease</p>
           </div>
-          <div className="flex flex-row items-center justify-center gap-4">
-          <Button variant="outline" className="cursor-pointer" onClick={() => router.push('/dashboard')} >Dashboard </Button>
-          <Button className="cursor-pointer" onClick={()=>router.push('/transactions')} >Go to Transaction <ArrowRight/> </Button>
-          </div>
+          <Button  className="cursor-pointer" onClick={() => router.push('/home')} > <HomeIcon className="w-4 h-4" /> Home </Button>
         </div>
       </div>
     </>

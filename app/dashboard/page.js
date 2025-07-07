@@ -8,7 +8,7 @@ import CategoryPieChart from "@/components/dashboard/CategoryPieChart";
 import { Button } from "@/components/ui/button";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import { toast } from "sonner";
-import Loader from '@/components/transactions/Loader';
+import Loader from '@/components/Loader';
 
 export default function Dashboard() {
     const [transactions, setTransactions] = useState([]);
@@ -42,23 +42,12 @@ export default function Dashboard() {
     return (
         <>
             <Loader loading={loading} />
-            <div className="min-h-screen bg-gray-50 py-8 px-4 sm:px-6 lg:px-8">
                 <div className="max-w-6xl mx-auto space-y-8">
                     {/* header */}
-                    <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between">
                         <div>
                             <h1 className="text-3xl font-bold text-gray-900">Finance Dashboard</h1>
                             <p className="mt-2 text-gray-600">Track and manage your personal finances</p>
                         </div>
-                        <div className="mt-4 sm:mt-0 flex flex-row items-start sm:items-center gap-2">
-                            <Button variant="outline" className="flex items-center cursor-pointer" onClick={() => window.location.href = "/"}>
-                                <ArrowLeft className="mr-1" /> Back
-                            </Button>
-                            <Button className="flex items-center cursor-pointer" onClick={() => window.location.href = "/transactions"}>
-                                Transaction Page <ArrowRight className="ml-1" />
-                            </Button>
-                            </div>
-                    </div>
                     <SummaryCards
                         totalExpenses={totalExpenses}
                         mostSpentCategory={mostSpentCategory}
@@ -70,7 +59,6 @@ export default function Dashboard() {
 
                     <TransactionList categories={CATEGORY_MAP} transactions={transactions.slice(0, 5)} loc="dashboard" />
                 </div>
-            </div>
         </>
     )
 }
