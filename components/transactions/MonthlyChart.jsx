@@ -48,8 +48,8 @@ export default function MonthlyChart({ transactions = [] }) {
   const [range, setRange] = useState("last6");
   const rangeOptions = [
     { last3: "Last 3 months" },
-    { last6: "Last 6 Months" },
-    { year: "Full Year" } ];
+    { last6: "Last 6 months" },
+    { year: "Last 12 months" } ];
 
 const [data, setData] = useState([]);
 
