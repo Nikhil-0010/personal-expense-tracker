@@ -21,7 +21,7 @@ export default function HomePage() {
                   <div className="flex items-center">
                 <div className="flex-shrink-0">
                   <Link href="/" className="text-xl font-bold text-gray-900">
-                    Personal Finance Tracker
+                    Personal Expense Tracker
                   </Link>
                 </div>
                   </div>

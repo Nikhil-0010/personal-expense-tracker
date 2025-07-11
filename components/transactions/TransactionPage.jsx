@@ -80,7 +80,7 @@ export default function TransactionsPage() {
                     {/* title */}
                     <div className="text-center">
                         <h1 className="text-3xl font-bold text-gray-900 sm:text-4xl" >Transaction Tracker</h1>
-                        <p className="my-2 text-gray-600" >Track your income and expenses with ease</p>
+                        <p className="my-2 text-gray-600" >Add and track your expenses with ease</p>
                     </div>
 
                     {/* Transaction Form */}

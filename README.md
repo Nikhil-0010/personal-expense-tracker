@@ -1,6 +1,6 @@
-# 💸 Personal Finance Visualizer - Stage 1
+# 💸 Personal Expense Visualizer - Stage 1
 
-A simple web application to track personal expenses. Built for Yardstick's Full-Stack Internship Assignment.
+A simple web application to track personal expenses.
 
 ## 🚀 Features (Stage 1)
 - Add / Edit / Delete transactions (amount, date, description)
@@ -58,8 +58,8 @@ A simple web application to track personal expenses. Built for Yardstick's Full-
 ## 🛠 Setup ()
 1. Clone the repo  
     ```bash
-    git clone https://github.com/Nikhil-0010/personal-finance-tracker.git
-    cd personal-finance-tracker
+    git clone https://github.com/Nikhil-0010/personal-expense-tracker.git
+    cd personal-expense-tracker
     ```
 2. Install dependencies
     ```bash
@@ -74,7 +74,7 @@ A simple web application to track personal expenses. Built for Yardstick's Full-
 This repository contains all three stages of the Yardstick Full-Stack Internship assignment.
 ## 🌐 Deployment
 
-Live Demo: [https://personal-finance-tracker-mocha-eta.vercel.app/]
+Live Demo: [https://personal-expense-tracker-mocha-eta.vercel.app/]
 
 ✅ The submission for Stage 1, 2, 3 is tagged as stage-1.Each stage of the assignment is tagged for clarity:
 -  stage-1
@@ -83,6 +83,6 @@ Live Demo: [https://personal-finance-tracker-mocha-eta.vercel.app/]
 
 Use these tags to view code state per stage.View it using:
 
-GitHub Repo (Stage 1): https://github.com/Nikhil-0010/personal-finance-tracker/tree/stage-1
-GitHub Repo (Stage 2): https://github.com/Nikhil-0010/personal-finance-tracker/tree/stage-2
-GitHub Repo (Stage 3): https://github.com/Nikhil-0010/personal-finance-tracker/tree/stage-3
+GitHub Repo (Stage 1): https://github.com/Nikhil-0010/personal-expense-tracker/tree/stage-1
+GitHub Repo (Stage 2): https://github.com/Nikhil-0010/personal-expense-tracker/tree/stage-2
+GitHub Repo (Stage 3): https://github.com/Nikhil-0010/personal-expense-tracker/tree/stage-3

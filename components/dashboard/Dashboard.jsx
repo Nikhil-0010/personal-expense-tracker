@@ -45,8 +45,8 @@ export default function Dashboard() {
                 <div className="max-w-6xl mx-auto space-y-8">
                     {/* header */}
                         <div>
-                            <h1 className="text-3xl font-bold text-gray-900">Finance Dashboard</h1>
-                            <p className="mt-2 text-gray-600">Track and manage your personal finances</p>
+                            <h1 className="text-3xl font-bold text-gray-900">Dashboard</h1>
+                            <p className="mt-2 text-gray-600">Track and manage your personal expenses</p>
                         </div>
                     <SummaryCards
                         totalExpenses={totalExpenses}
