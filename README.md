@@ -1,4 +1,4 @@
-# 💸 Personal Expense Visualizer - Stage 1
+# 💸 Personal Expense Visualizer
 
 A simple web application to track personal expenses.
 
